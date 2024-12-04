@@ -1,26 +1,36 @@
+import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function HomePage() {
+    const [value1, setValue1] = useState();
+    const [value2, setValue2] = useState();
+    const [result, setResult] = useState();
+
     return (
         <SafeAreaView>
             <Text style={{ fontSize: 20, margin: 10 }}>Soma de valores!</Text>
             <View style={styles.textInput}>
                 <TextInput
                     placeholder='Valor 1'
+                    value={value1}
+                    onChangeText={(value) => setValue1(value)}
                 />
             </View>
             <View style={styles.textInput}>
                 <TextInput
                     placeholder='Valor 2'
+                    value={value2}
+                    onChangeText={(value) => setValue2(value)}
                 />
             </View>
             <View style={styles.button}>
-                <Button 
-                title='Somar'
+                <Button
+                    title='Somar'
+                    onPress={setResult(value1 + value2)}
                 />
             </View>
             <Text style={{ fontSize: 16, margin: 10 }}>Resultado:</Text>
-            <Text style={{ fontSize: 16, margin: 10 }}>Resultado:</Text>
+            <Text style={{ fontSize: 16, margin: 10 }}>{result}</Text>
         </SafeAreaView>
     );
 }

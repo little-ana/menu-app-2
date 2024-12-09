@@ -1,9 +1,11 @@
 import './gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomePage from './pages/HomePage'
 import SomarPage from './pages/SomarPage'
+import DuplicarPage from './pages/DuplicarPage';
+import CalculadoraPage from './pages/CalculadoraPage';
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -12,6 +14,8 @@ export default function App() {
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={HomePage} />
       <Drawer.Screen name="Somar" component={SomarPage} />
+      <Drawer.Screen name="Calculadora" component={CalculadoraPage} />
+      <Drawer.Screen name="Duplicar" component={DuplicarPage} />
     </Drawer.Navigator>
     </NavigationContainer>
   );

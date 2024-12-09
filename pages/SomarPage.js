@@ -5,6 +5,10 @@ export default function HomePage() {
     const [value1, setValue1] = useState();
     const [value2, setValue2] = useState();
     const [result, setResult] = useState();
+    
+    const somar = () => {
+      setResult(parseFloat(value1) + parseFloat(value2));
+    }
 
     return (
         <SafeAreaView>
@@ -26,7 +30,7 @@ export default function HomePage() {
             <View style={styles.button}>
                 <Button
                     title='Somar'
-                    onPress={setResult(value1 + value2)}
+                    onPress={() => somar()}
                 />
             </View>
             <Text style={{ fontSize: 16, margin: 10 }}>Resultado:</Text>
